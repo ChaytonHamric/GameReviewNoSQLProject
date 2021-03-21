@@ -3,6 +3,12 @@ var fs = require('fs');
 
 const PORT = 3000;
 
+var xhr = newXMLHttpRequest();
+vhr.open("POST", "http://id.twitch.tv/oath2/token?client_id=g9ld31alrkoaably90beduok0snere&client_secret=6ju82oxji3lt6v5fp9idsc1d18gm4g&grant_type=client_credentials"), true
+xhr.setRequestHeader('Content-Type', 'application/json');
+xhr.send(JSON.stringify({
+    value: value
+}));
 fs.readFile('index.html', function (err, html) {
 
     if (err) throw err;
@@ -13,3 +19,4 @@ fs.readFile('index.html', function (err, html) {
         response.end();
     }).listen(PORT);
 });
+
