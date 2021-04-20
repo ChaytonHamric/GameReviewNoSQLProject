@@ -3,22 +3,42 @@ const Review = require('../models/Reviews')
  
 
 module.exports = {
-    create: (req, res) => {
-        res.status(201).json({
-            message: "Successfully Created"
-        })
+    create: async (req, res) => {
+
+        try {
+            const new_Review = new Review({
+                GameName: req.params.GameName,
+                HoursPlayed: req.params.HoursPlayed,
+                FiveStarRating: req.params.FiveStarRating,
+                Reviews: req.params.Reviews
+            });
+            await new_Review.save();
+
+            res.status(201).json({
+                review: {
+                    ...new_Review._doc,
+                    _id: new_Review.id,
+                    HoursPlayed: new_Review.HoursPlayed,
+                    FiveStarRating: new_Review.FiveStarRating,
+                    Review: new_Review.Review
+                }
+            });
+        }
+        catch (err){
+            throw err;
+        }
     },
     read: async (req, res) => { 
         try {
             const review = await Review.findById(req.params.reviewId);
             res.status(201).json({
-            review: {
-                ...review._doc,
-                _id: review.id,
-                HoursPlayed: review.HoursPlayed,
-                FiveStarRating: review.FiveStarRating,
-                Review: review.Review
-            }
+                review: {
+                    ...review._doc,
+                    _id: review.id,
+                    HoursPlayed: review.HoursPlayed,
+                    FiveStarRating: review.FiveStarRating,
+                    Review: review.Review
+                }
             });
         }
         catch (err){
