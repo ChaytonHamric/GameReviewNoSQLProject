@@ -11,13 +11,13 @@ const review_Router = require("./routes/review.route")
 
 
 // viewed at http://localhost:8080
-app.use(express.static(path.join(__dirname + "/frontend/")))
+app.use(express.static(path.join(__dirname + "/build/")))
 app.use("/reviews", review_Router)
 app.use(bodyParser.json())
 
 app.get('/', function(req, res) {
     
-    res.sendFile(path.join(__dirname + '/frontend/index.html'));
+    res.sendFile(path.join(__dirname + '/build/index.html'));
 });
 
 mongoose.connect('mongodb+srv://Admin:Nosql123@gamereviewsite.xhhn6.mongodb.net/Game-Review?retryWrites=true&w=majority',
