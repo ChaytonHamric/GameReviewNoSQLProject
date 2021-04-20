@@ -1,21 +1,29 @@
-var express = require('express')
-var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+const mongoose = require('mongoose'); 
+const express = require('express')
+const bodyParser = require('body-parser')
+
+const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 console.log("WHAT UP")
 
-var app = express();
-var path = require('path');
-var review_Router = require("./routes/review.route")
+const app = express();
+const path = require('path');
+const review_Router = require("./routes/review.route")
 
 
 // viewed at http://localhost:8080
 app.use(express.static(path.join(__dirname + "/frontend/")))
 app.use("/reviews", review_Router)
+app.use(bodyParser.json())
+
 app.get('/', function(req, res) {
     
     res.sendFile(path.join(__dirname + '/frontend/index.html'));
 });
 
-app.listen(3000);
+mongoose.connect('mongodb+srv://Admin:Nosql123@gamereviewsite.xhhn6.mongodb.net/Game-Review?retryWrites=true&w=majority',
+        { useNewUrlParser: true, useUnifiedTopology: true})
+        .then((result) => app.listen(3000))
+        .catch((err) => console.log(err));
 
 
 
