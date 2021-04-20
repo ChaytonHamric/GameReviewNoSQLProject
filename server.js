@@ -4,9 +4,12 @@ console.log("WHAT UP")
 
 var app = express();
 var path = require('path');
+var review_Router = require("./routes/review.route")
+
 
 // viewed at http://localhost:8080
 app.use(express.static(path.join(__dirname + "/frontend/")))
+app.use("/reviews", review_Router)
 app.get('/', function(req, res) {
     
     res.sendFile(path.join(__dirname + '/frontend/index.html'));
