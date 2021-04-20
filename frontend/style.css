@@ -1,7 +1,10 @@
 #SiteTitle {
   text-align: center;
 }
-
+.star-image{
+  max-width: 1%;
+  max-height: 1%;
+}
 * {
   box-sizing: border-box;
 }
