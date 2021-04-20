@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import './style.css'
+import App from './components/App'
 
-ReactDOM.render(<h1>Hello  Robots</h1>, document.getElementById('root'))
+
+ReactDOM.render(<App />, document.getElementById('root'))
+
