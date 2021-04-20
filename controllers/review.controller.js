@@ -7,22 +7,14 @@ module.exports = {
 
         try {
             const new_Review = new Review({
-                GameName: req.params.GameName,
-                HoursPlayed: req.params.HoursPlayed,
-                FiveStarRating: req.params.FiveStarRating,
-                Reviews: req.params.Reviews
+                GameName: req.body.GameName,
+                HoursPlayed: req.body.HoursPlayed,
+                FiveStarRating: req.body.FiveStarRating,
+                Reviews: req.body.Reviews
             });
-            await new_Review.save();
+            const return_Review = await new_Review.save();
 
-            res.status(201).json({
-                review: {
-                    ...new_Review._doc,
-                    _id: new_Review.id,
-                    HoursPlayed: new_Review.HoursPlayed,
-                    FiveStarRating: new_Review.FiveStarRating,
-                    Review: new_Review.Review
-                }
-            });
+            res.status(201).json(return_Review);
         }
         catch (err){
             throw err;
@@ -31,15 +23,12 @@ module.exports = {
     read: async (req, res) => { 
         try {
             const review = await Review.findById(req.params.reviewId);
-            res.status(201).json({
-                review: {
-                    ...review._doc,
-                    _id: review.id,
-                    HoursPlayed: review.HoursPlayed,
-                    FiveStarRating: review.FiveStarRating,
-                    Review: review.Review
-                }
-            });
+            if (review.length == 0 || !review){
+                res.status(404).json({
+                    message: "Review Not Found"
+                });
+            }
+            res.status(201).json(review);
         }
         catch (err){
             throw err;
@@ -50,17 +39,8 @@ module.exports = {
             const reviews = await Review.find({
                 GameName: req.params.GameName
             });
-            transformed_Reviews = reviews.map(review => {
-                return {
-                    ...review._doc,
-                    _id: review.id,
-                    HoursPlayed: review.HoursPlayed,
-                    FiveStarRating: review.FiveStarRating,
-                    Review: review.Review
-                }
-            });
             res.status(201).json({
-                reviews: transformed_Reviews
+                reviews: reviews
             });
         }
         catch (err){
