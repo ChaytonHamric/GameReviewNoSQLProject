@@ -1,0 +1,28 @@
+{
+  "name": "gamereviewnosqlproject",
+  "version": "1.0.0",
+  "description": " NoSql Project",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.12.1",
+    "nodemon": "^2.0.7",
+    "requirejs": "^2.3.6",
+    "xmlhttprequest": "^1.8.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChaytonHamric/GameReviewNoSQLProject.git"
+  },
+  "author": "Alex Karwowski <akk96.developer@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ChaytonHamric/GameReviewNoSQLProject/issues"
+  },
+  "homepage": "https://github.com/ChaytonHamric/GameReviewNoSQLProject#readme"
+}
