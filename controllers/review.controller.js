@@ -22,8 +22,8 @@ module.exports = {
     },
     read: async (req, res) => { 
         try {
-            const review = await Review.findById(req.params.reviewId);
-            if (review.length == 0 || !review){
+            const review = await Review.findById(req.params.Review_ID);
+            if (!review || review.length == 0){
                 res.status(404).json({
                     message: "Review Not Found"
                 });
