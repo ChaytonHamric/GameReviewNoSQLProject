@@ -4,11 +4,13 @@
   "description": " NoSql Project",
   "main": "server.js",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "mongoose": "^5.12.1",
     "nodemon": "^2.0.7",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-router-dom": "^5.2.0",
     "requirejs": "^2.3.6",
     "xmlhttprequest": "^1.8.0"
   },
