@@ -35,7 +35,7 @@ export default class Home extends Component {
                         <input type="text" ref={this.searchEL}></input>
                         <ul>
                             <li>
-                                <Link to="/title">
+                                <Link to="/title?name=Fortnite">
                                     Fortnite
                                 </Link>
                             </li>
