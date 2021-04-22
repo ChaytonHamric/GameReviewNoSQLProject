@@ -9,11 +9,12 @@ console.log("WHAT UP")
 const app = express();
 const path = require('path');
 const review_Router = require("./routes/review.route")
-
+const title_Router = require("./routes/title.route");
 
 // viewed at http://localhost:8080
 app.use(express.static(path.join(__dirname + "/build/")))
 app.use("/reviews", review_Router)
+app.use("/games", title_Router);
 app.use(bodyParser.json())
 app.use(cors())
 
