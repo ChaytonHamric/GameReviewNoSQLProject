@@ -10,7 +10,7 @@ export default class App extends Component {
                 <BrowserRouter>
                     <Switch>
                         <Route exact path="/" component={Home} />
-                        <Route path="/title" component={Game} />
+                        <Route path="/title/:name" component={Game} />
                     </Switch>
                 </BrowserRouter>
             </div>
