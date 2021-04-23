@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import star from "../star.png"
-import graystar from "../graystar.png"
 import StarList from './StarList'
 export default class CreateReview extends Component {
     constructor(props) {
