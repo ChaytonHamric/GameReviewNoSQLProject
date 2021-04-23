@@ -28,7 +28,7 @@ const Game = () => {
       <h1>{name}</h1>
       {<ReviewList reviews={reviewList} />}
         <div>
-            <CreateReview />
+            <CreateReview gameName={name} updateReviewList={setReviewList} currentReviewList={reviewList} />
         </div>
     </div>
   );
