@@ -47,34 +47,40 @@ export default class Home extends Component {
       <div>
         <h1>Bare Bones Gaming</h1>
         <hr />
-        <div>
-          <form onSubmit={this.updateList}>
-            <input type="text" ref={this.searchEL}></input>
-          </form>
-          {this.state.isLoading ? (
-            <div>
-              <h2>
-                {this.searchEL.current.value == ""
-                  ? "Fetching Random Game"
-                  : `Loading search results for ${this.searchEL.current.value}`}
-              </h2>
-              <Loader />
+        <div className="input-group">
+            <div className ="form-outline">
+                    <form onSubmit={this.updateList}>
+                        <input type="search" className="form-control" ref={this.searchEL}></input>
+                        <label className= "form-label">Search for a game</label>
+                    </form>
             </div>
-          ) : (
-            <ul>
-              {this.state.gameList.map((game) => (
-                <li>
-                  <Link
-                    to={`/title/${encodeURI(game.Name.split(" ").join(""))}`}
-                  >
-                    {game.Name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          )}
         </div>
-      </div>
+            <hr/>
+            <div>
+                    {this.state.isLoading ? (
+                        <div>
+                        <h2>
+                            {this.searchEL.current.value == ""
+                            ? "Fetching Random Game"
+                            : `Loading search results for ${this.searchEL.current.value}`}
+                        </h2>
+                        <Loader />
+                        </div>
+                    ) : (
+                        <ul className="list-group text-center">
+                        {this.state.gameList.map((game) => (
+                            <li className="list-group-item">
+                            <Link
+                                to={`/title/${encodeURI(game.Name.split(" ").join(""))}`}
+                            >
+                                {game.Name}
+                            </Link>
+                            </li>
+                        ))}
+                        </ul>
+                    )}
+            </div>
+        </div>
     );
   }
 }
