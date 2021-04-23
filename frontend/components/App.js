@@ -21,7 +21,6 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <h2>Hello World</h2>
         <BrowserRouter>
           <Switch>
             <Route exact path="/" >
