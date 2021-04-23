@@ -12,7 +12,7 @@ module.exports = {
         Review: req.body.Review,
       });
       const return_Review = await new_Review.save();
-
+      res.set("Access-Control-Allow-Origin", "*")
       res.status(200).json(return_Review);
     } catch (err) {
       throw err;
@@ -29,6 +29,7 @@ module.exports = {
           message: "Review Not Found",
         });
       }
+      res.set("Access-Control-Allow-Origin", "*")
       res.status(200).json(review);
     } catch (err) {
       throw err;
@@ -43,6 +44,7 @@ module.exports = {
       });
       console.log(reviews);
 
+      res.set("Access-Control-Allow-Origin", "*");
       res.status(200).json({
         reviews: reviews,
       });

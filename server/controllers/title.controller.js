@@ -7,6 +7,7 @@ module.exports = {
     try {
       const titles = await Title.find();
       console.log("Read Game List");
+      res.set('Access-Control-Allow-Origin', '*')
       res.status(201).json({
         titles: titles,
       });
@@ -27,6 +28,7 @@ module.exports = {
       }
       if (titles.length == 0) console.log("No results found");
       console.log("Read Game List");
+      res.set('Access-Control-Allow-Origin', '*')
       res.status(201).json({
         titles: titles,
       });
