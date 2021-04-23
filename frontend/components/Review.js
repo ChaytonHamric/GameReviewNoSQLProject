@@ -22,9 +22,9 @@ export default class Review extends Component {
     return (
       <div>
         <div>{this.state.stars}</div>
-        <p>{this.props.review}</p>
+        <p>Review: {this.props.review}</p>
         <ul>
-          <li>{this.props.hours}</li>
+          <li>Hours Played{this.props.hours}</li>
         </ul>
       </div>
     );
