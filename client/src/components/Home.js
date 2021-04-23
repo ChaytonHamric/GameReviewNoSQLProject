@@ -26,7 +26,7 @@ export default class Home extends Component {
     e.preventDefault();
     this.setState({ isLoading: true });
     const search = this.searchEL.current.value;
-    fetch(`http://localhost:3000/games/`, {
+    fetch(`http://157.230.63.172:3001/games/`, {
       method: "POST",
       headers: {
         Accept: "application/json",
