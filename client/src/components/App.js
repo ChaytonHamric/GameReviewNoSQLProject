@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Home from './Home'
 import Game from './Game'
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
+import '../style.css'
 export default class App extends Component {
   constructor(props) {
     super(props)

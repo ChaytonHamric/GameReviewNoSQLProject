@@ -3,13 +3,13 @@ import { Link, useParams } from "react-router-dom";
 import CreateReview from "./CreateReview";
 import ReviewList from "./ReviewList";
 
-const Game = props => {
+export default function Game(props) {
   const { name } = useParams();
   const [reviewList, setReviewList] = useState([]);
-  const [gameName, setGameName] = useState(name)
-  const boxArt = encodeURI(`https://static-cdn.jtvnw.net/ttv-boxart/${name}-100x100.jpg`)
+  const [gameName, setGameName] = useState(decodeURI(name))
+  const boxArt = encodeURI(`https://static-cdn.jtvnw.net/ttv-boxart/${gameName}-150x210.jpg`)
   useEffect(() => {
-    fetch(`http://localhost:3000/reviews/${gameName}`)
+    fetch(`http://localhost:3000/reviews/${gameName.split(' ').join('')}`)
       .then((res) => res.json())
       .then((list) => {
         let reviews = [];
@@ -27,20 +27,23 @@ const Game = props => {
 
   return (
     <div>
-        <div class="media">
-            <img class="mr-3" src={boxArt} alt={`${name} Box Art`} />
-            <div class="media-body">
-                <h1 class="mt-0">{props.name}</h1>
-            </div>
+      <Link to="/">Home</Link>
+      <a href="#myform">Create a Review</a>
+      <div class="media">
+        <img class="mr-3" src={boxArt} alt={`${gameName} Box Art`} />
+        <div class="media-body">
+          <h1 class="mt-0">{gameName}</h1>
         </div>
-        <Link to="/">Home</Link>
-        <h1>{props.name}</h1>
-        {<ReviewList reviews={reviewList} />}
-            <div>
-                <CreateReview gameName={name} updateReviewList={setReviewList} currentReviewList={reviewList} />
-            </div>
+      </div>
+
+      {<ReviewList reviews={reviewList} />}
+      <div>
+        <CreateReview
+          gameName={gameName.split(" ").join("")}
+          updateReviewList={setReviewList}
+          currentReviewList={reviewList}
+        />
+      </div>
     </div>
   );
 };
-
-export default Game;

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import star from "../star.png";
+import star from '../star.png'
 
 export default class Review extends Component {
   componentDidMount() {
@@ -21,10 +21,10 @@ export default class Review extends Component {
   render() {
     return (
       <div>
-        <div>{this.state.stars}</div>
         <p>Review: {this.props.review}</p>
         <ul>
-          <li>Hours Played{this.props.hours}</li>
+          <li>Hours Played: {this.props.hours}</li>
+          <li><div>Rating: {this.state.stars}</div></li>
         </ul>
       </div>
     );

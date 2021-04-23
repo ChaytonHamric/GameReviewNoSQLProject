@@ -1,0 +1,24 @@
+{
+  "name": "GameReviewNoSQLProject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "dependencies": {
+    "concurrently": "^6.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "concurrently \"cd ./server && npm start\" \"cd ./client && npm start\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChaytonHamric/GameReviewNoSQLProject.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChaytonHamric/GameReviewNoSQLProject/issues"
+  },
+  "homepage": "https://github.com/ChaytonHamric/GameReviewNoSQLProject#readme"
+}

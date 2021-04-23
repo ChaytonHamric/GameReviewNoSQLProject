@@ -3,8 +3,6 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 
-console.log(App);
-
 console.log("WHAT UP");
 
 const app = express();
@@ -13,11 +11,11 @@ const review_Router = require("./routes/review.route");
 const title_Router = require("./routes/title.route");
 
 // viewed at http://localhost:8080
-
+app.use(cors());
 app.use("/reviews", review_Router);
 app.use("/games", title_Router);
 app.use(bodyParser.json());
-app.use(cors());
+
 
 mongoose
   .connect(

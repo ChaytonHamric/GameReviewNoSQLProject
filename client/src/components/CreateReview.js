@@ -61,7 +61,7 @@ export default class CreateReview extends Component {
                     </div>
                     <div className="form-group">
                         <label htmlFor="Review">Bare Bones Review</label>
-                        <input required ref={this.reviewEl} className="form-control" type="text" id="Review" name="Review" defaultValue="Type your review here" maxLength="120"></input>
+                        <input required ref={this.reviewEl} className="form-control" type="text" id="Review" name="Review" placeholder="Type your review here" maxLength="120"></input>
                     </div>
                     <button className="btn btn-primary" onClick={this.clickHandler.bind(this)}>Submit</button>
                 </form>

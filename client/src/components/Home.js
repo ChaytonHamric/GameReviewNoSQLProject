@@ -12,13 +12,17 @@ export default class Home extends Component {
       gameList: [],
       isLoading: false,
       gameName: "",
+      controller: new AbortController()
     };
     this.updateList = this.updateList.bind(this);
   }
 
-  componentDidMount() {}
+  componentDidMount() {
+
+  }
 
   updateList(e) {
+    this.state.controller.abort()
     e.preventDefault();
     this.setState({ isLoading: true });
     const search = this.searchEL.current.value;
@@ -30,7 +34,7 @@ export default class Home extends Component {
       },
       body: JSON.stringify({
         GameName: `${search}`,
-      }),
+      })
     })
       .then((res) => {
         let response = res.json();
@@ -39,7 +43,7 @@ export default class Home extends Component {
       })
       .then((titleList) => {
         this.setState({ gameList: titleList.titles, isLoading: false });
-      });
+      }).catch(err => {});
   }
   render() {
     return (
@@ -71,7 +75,7 @@ export default class Home extends Component {
                         {this.state.gameList.map((game) => (
                             <li className="list-group-item">
                             <Link onClick={() => this.props.setCache(game.Name)}
-                                to={`/title/${encodeURI(game.Name.split(" ").join(""))}`}
+                                to={`/title/${encodeURI(game.Name)}`}
                             >
                                 {game.Name}
                             </Link>
