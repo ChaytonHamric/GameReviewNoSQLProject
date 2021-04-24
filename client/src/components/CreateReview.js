@@ -20,7 +20,7 @@ export default class CreateReview extends Component {
         const stars = this.state.starCount
         const gameName = this.props.gameName
 
-        fetch("http://157.230.63.172:3001/reviews/create/", {
+        fetch("http://157.230.63.172:3000/reviews/create/", {
           headers: {
             'Accept': "application/json",
             "Content-Type": "application/json",
