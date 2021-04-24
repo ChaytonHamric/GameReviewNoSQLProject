@@ -29,10 +29,10 @@ export default function Game(props) {
     <div>
       <Link to="/">Home</Link>
       <a href="#myform">Create a Review</a>
-      <div class="media">
-        <img class="mr-3" src={boxArt} alt={`${gameName} Box Art`} />
-        <div class="media-body">
-          <h1 class="mt-0">{gameName}</h1>
+      <div className="media">
+        <img className="mr-3" src={boxArt} alt={`${gameName} Box Art`} />
+        <div className="media-body">
+          <h1 className="mt-0">{gameName}</h1>
         </div>
       </div>
 
