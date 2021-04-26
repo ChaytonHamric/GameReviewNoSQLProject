@@ -49,7 +49,7 @@ export default class Home extends Component {
     return (
       //class for styling = className="text"
       <div>
-        <h1>Bare Bones Gaming</h1>
+        <h1 className="title-name">Bare Bones Gaming</h1>
         <hr />
         <div className="input-group">
             <div className ="form-outline">

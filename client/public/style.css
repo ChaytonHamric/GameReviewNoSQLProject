@@ -45,3 +45,7 @@ form.example::after {
 .inactive{
   filter: grayscale(1)
 }
+
+.title-name{
+  text-align: center;
+}

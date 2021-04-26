@@ -27,14 +27,32 @@ export default function Game(props) {
 
   return (
     <div>
-      <Link to="/">Home</Link>
-      <a href="#myform">Create a Review</a>
+      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        {/* <center> */}
+        <a className="navbar-brand" href="#">Navbar</a>
+        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav">
+            <li className="nav-item active">
+              <Link to="/" className="nav-link">Home</Link>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#myform">Create a Review</a>
+            </li>
+          </ul>
+        </div>
+      {/* </center> */}
+      </nav>
+      <center>
       <div className="media">
         <img className="mr-3" src={boxArt} alt={`${gameName} Box Art`} />
         <div className="media-body">
           <h1 className="mt-0">{gameName}</h1>
         </div>
       </div>
+      </center>
 
       {<ReviewList reviews={reviewList} />}
       <div>
