@@ -9,7 +9,7 @@ export default function Game(props) {
   const [gameName, setGameName] = useState(decodeURI(name))
   const boxArt = encodeURI(`https://static-cdn.jtvnw.net/ttv-boxart/${gameName}-150x210.jpg`)
   useEffect(() => {
-    fetch(`http://157.230.63.172:3000/reviews/${gameName.split(' ').join('')}`)
+    fetch(`http://localhost:3000/reviews/${gameName.split(' ').join('')}`)
       .then((res) => res.json())
       .then((list) => {
         let reviews = [];
