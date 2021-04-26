@@ -49,3 +49,15 @@ form.example::after {
 .title-name{
   text-align: center;
 }
+.form-control{
+  display: inline-block;
+  border: none;
+  width: 100%;
+}
+.search-bar{
+  border: 1px solid;
+  display: inline-block;
+}
+.search-button{
+  display: inline-block;
+}
