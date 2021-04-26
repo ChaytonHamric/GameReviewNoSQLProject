@@ -51,14 +51,22 @@ export default class Home extends Component {
       <div>
         <h1 className="title-name">Bare Bones Gaming</h1>
         <hr />
-        <div className="input-group">
-            <div className ="form-outline">
-                    <form onSubmit={this.updateList}>
-                        <input type="search" className="form-control" ref={this.searchEL}></input>
-                        <label className= "form-label">Search for a game</label>
+        <div className="container">
+          <div className="row">
+              <div className="col-lg-6 mx-auto">
+                    <form className="form-control" onSubmit={this.updateList}>
+                      <div className="input-group">
+                      <input type="search" className="form-control search-bar" ref={this.searchEL}/>
+                      <span className="input-group-btn">
+                          <button className="btn btn-secondary search-button" type="submit" value="submit">Search</button>
+                      </span>
+                      </div>
                     </form>
-            </div>
-        </div>
+                
+              </div>
+          </div>
+      </div>
+        
             <hr/>
             <div>
                     {this.state.isLoading ? (
