@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import StarList from './StarList'
+import "../style.css"
 export default class CreateReview extends Component {
     constructor(props) {
         super(props)
@@ -48,15 +49,14 @@ export default class CreateReview extends Component {
 
     render(){
         return(
-            <div style={{margin: '35px'}}>
+            <div className="create-review">
                 <form id="myform" action="" >
                     <div className="form-group">
                         <label htmlFor="HoursPlayed">Hours Played</label>
                         <input ref={this.hoursEl} required className="form-control" type="number" id="HoursPlayed" name="HoursPlayed" min="1" max="1000"></input>
                     </div>
                     <div className="form-group">
-                        {/* <label for="FiveStarRating">Five Star Rating</label>
-                        <input required className="form-control" type="number" id="FiveStarRating" name="FiveStarRating" min="0" max="5"></input> */}
+                        Rating
                         <StarList updateFormStars={this.updateStarCount.bind(this)}/>
                     </div>
                     <div className="form-group">

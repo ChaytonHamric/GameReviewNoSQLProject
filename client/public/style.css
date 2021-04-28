@@ -2,8 +2,8 @@
   text-align: center;
 }
 .star-image{
-  max-width: 1%;
-  max-height: 1%;
+  max-width: 1.75%;
+  max-height: 1.75%;
 }
 * { 
   box-sizing: border-box;
@@ -60,4 +60,69 @@ form.example::after {
 }
 .search-button{
   display: inline-block;
+}
+
+
+.title-name{
+  text-align: center;
+  color: #f2a365;
+}
+hr{
+ background-color: #30475e; 
+}
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #f2a365 !important;
+    color: #30475e !important;
+}
+.nav-link{
+  color: #30475e; 
+}
+.gameName{
+  color: #f2a365
+}
+
+.review-list-hp{
+  border-color: #ececec;
+  background-color: #222831;
+}
+.review-list-item{
+  border-color: #ececec;
+  background-color: #222831;
+  
+}
+.list-review{
+color:#f2a365;
+}
+
+.reviews{
+    border-color: #ececec;
+    border-style: solid;
+    border-width: 2px;
+    margin: 2px;
+    background-color: #30475e;
+    color: #f2a365;
+    padding: 1px;
+}
+.navbar-custom{
+  background-color: #f2a365 !important;
+  
+}
+.box-art{
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.box-image{
+  border-color: #ececec;
+    border-style: solid;
+    border-width: 2px;
+}
+
+body{
+  background-color: #222831;
+}
+#root{
+  background-color:#222831;
+}
+.create-review{
+  background-color:#30475e;
 }

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import CreateReview from "./CreateReview";
 import ReviewList from "./ReviewList";
-
+import "../style.css"
 export default function Game(props) {
   const { name } = useParams();
   const [reviewList, setReviewList] = useState([]);
@@ -27,7 +27,7 @@ export default function Game(props) {
 
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark justify-content-between">
+      <nav className="container navbar navbar-expand-lg navbar-custom justify-content-between">
         {/* <center> */}
         
         <div className="collapse navbar-collapse" id="navbarNav">
@@ -42,23 +42,26 @@ export default function Game(props) {
         </div>
       {/* </center> */}
       </nav>
+        <div className="container">
       <center>
-      <div className="media">
-        <img className="mr-3" src={boxArt} alt={`${gameName} Box Art`} />
-        <div className="media-body">
-          <h1 className="mt-0">{gameName}</h1>
+        <div className="media container box-art">
+          <img className="mr-3 box-image" src={boxArt} alt={`${gameName} Box Art`} />
+          <div className="media-body">
+            <h1 className="mt-0 gameName">{gameName}</h1>
+          </div>
         </div>
-      </div>
-      </center>
-
-      {<ReviewList reviews={reviewList} />}
-      <div>
-        <CreateReview
-          gameName={gameName.split(" ").join("")}
-          updateReviewList={setReviewList}
-          currentReviewList={reviewList}
-        />
-      </div>
+        </center>
+        <div className="container">
+          {<ReviewList reviews={reviewList} />}
+        </div>
+        <div className="container">
+          <CreateReview
+            gameName={gameName.split(" ").join("")}
+            updateReviewList={setReviewList}
+            currentReviewList={reviewList}
+          />
+        </div>
+        </div>
     </div>
   );
 };

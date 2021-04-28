@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import star from '../star.png'
-
+import '../style.css'
 export default class Review extends Component {
   componentDidMount() {
     for (var i = 0; i < this.props.stars; ++i) {
@@ -20,7 +20,7 @@ export default class Review extends Component {
   }
   render() {
     return (
-      <div>
+      <div className="reviews">
         <p>Review: {this.props.review}</p>
         <ul>
           <li>Hours Played: {this.props.hours}</li>

@@ -54,11 +54,11 @@ export default class Home extends Component {
         <div className="container">
           <div className="row">
               <div className="col-lg-6 mx-auto">
-                    <form className="form-control" onSubmit={this.updateList}>
+                    <form onSubmit={this.updateList}>
                       <div className="input-group">
                       <input type="search" className="form-control search-bar" ref={this.searchEL}/>
                       <span className="input-group-btn">
-                          <button className="btn btn-secondary search-button" type="submit" value="submit">Search</button>
+                          <button className="btn btn-primary search-button" type="submit" value="submit">Search</button>
                       </span>
                       </div>
                     </form>
@@ -71,18 +71,20 @@ export default class Home extends Component {
             <div>
                     {this.state.isLoading ? (
                         <div>
-                        <h2>
+                        <h2 style={{textAlign: "center", color:"#f2a365"}}>
                             {this.searchEL.current.value == ""
                             ? "Fetching Random Game"
                             : `Loading search results for ${this.searchEL.current.value}`}
-                        </h2>
+                        
                         <Loader />
+                        </h2>
                         </div>
                     ) : (
-                        <ul className="list-group text-center">
+                      <div className="container">
+                        <ul className="list-group text-center review-list-hp">
                         {this.state.gameList.map((game) => (
-                            <li className="list-group-item">
-                            <Link onClick={() => this.props.setCache(game.Name)}
+                            <li className="list-group-item review-list-item">
+                            <Link className="list-review" onClick={() => this.props.setCache(game.Name)}
                                 to={`/title/${encodeURI(game.Name)}`}
                             >
                                 {game.Name}
@@ -90,6 +92,7 @@ export default class Home extends Component {
                             </li>
                         ))}
                         </ul>
+                        </div>
                     )}
             </div>
         </div>
