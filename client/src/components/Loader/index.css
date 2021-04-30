@@ -10,8 +10,8 @@
   height: 64px;
   margin: 8px;
   border-radius: 50%;
-  border: 6px solid #000;
-  border-color: #000 transparent #000 transparent;
+  border: 6px solid #f2a365;
+  border-color: #f2a365 transparent #f2a365 transparent;
   animation: lds-dual-ring 1.2s linear infinite;
 }
 @keyframes lds-dual-ring {
@@ -24,7 +24,7 @@
 }
 
 .spinner {
-    margin: 25% auto;
+    margin: 5% auto;
     display: flex;
     justify-content: center;
     align-items: center;

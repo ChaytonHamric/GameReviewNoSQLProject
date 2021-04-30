@@ -2,8 +2,10 @@
   text-align: center;
 }
 .star-image{
-  max-width: 1%;
-  max-height: 1%;
+  max-width: 1.75%;
+  max-height: 1.75%;
+  margin-left: 3px;
+  margin-right: 3px;
 }
 * { 
   box-sizing: border-box;
@@ -43,5 +45,152 @@ form.example::after {
   display: table;
 }
 .inactive{
+  
   filter: grayscale(1)
 }
+.form-control{
+  display: inline-block;
+  border: none;
+  width: 100%;
+  margin-left: 1rem;
+}
+.search-bar{
+  border: 1px solid;
+  display: inline-block;
+}
+.search-button{
+  display: inline-block;
+}
+
+.title-name {
+  max-width: 45%;
+  margin: auto;
+  display: block;
+}
+
+.logo-container img {
+  text-align: center;
+  margin-bottom: 5%;
+}
+
+.container-mine {
+  margin-top: 30vh;
+}
+
+.container-2 {
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.container-2 li {
+  width: 50%;
+  margin: auto;
+  border: none;
+}
+
+hr{
+ background-color: #30475e; 
+}
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #f2a365 !important;
+    color: #30475e !important;
+}
+.nav-link{
+  color: #30475e; 
+}
+.gameName{
+  color: #f2a365
+}
+.review-list-hp {
+  border-color: #ececec;
+  background-color: #222831;
+}
+.review-list-item {
+  text-align: left;
+  width: 50%;
+  margin: 1em auto;
+  padding: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.review-list-item:hover {
+  background-color: #3b4553;
+}
+
+.list-review {
+  background-color: inherit;
+  color:#f2a365;
+  width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+.padd-1 {
+  margin: 1rem;
+}
+
+.reviews{
+  border-color: #ececec;
+  border-style: solid;
+  border-width: 2px;
+  margin: 1rem;
+  background-color: #30475e;
+  color: #f2a365;
+  padding: 5px;
+  border-radius: 5px;
+}
+.star-list {
+  margin-left: 1rem;
+}
+.navbar-custom{
+  background-color: #f2a365 !important;
+}
+
+.list-group-item {
+  border: none;
+}
+.box-art{
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.box-image{
+  border-color: #ececec;
+    border-style: solid;
+    border-width: 2px;
+}
+body{
+  background-color: #222831;
+}
+#root{
+  background-color:#222831;
+}
+.create-review{
+  border-radius: 5px;
+  background-color:#30475e;
+  margin: 2px;
+  padding: 5px;
+  border-color: #f2a365;
+    border-style: solid;
+    border-width: 3px;
+  color: #ececec;
+}
+.star-avg{
+  margin-left: 5px;
+  margin-right: 5px;
+  max-width: 10%;
+  max-height: 10%;
+}
+.star-input{
+  margin-left: 3px;
+  margin-right: 3px;
+  max-width: 7%;
+  max-height: 8%;
+}
+
+.review-text-box{
+  width: 95%;
+}
+

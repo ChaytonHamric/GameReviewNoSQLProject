@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-
+import Logo from "../logo.png"
 import Loader from "./Loader";
 
 export default class Home extends Component {
@@ -26,7 +26,7 @@ export default class Home extends Component {
     e.preventDefault();
     this.setState({ isLoading: true });
     const search = this.searchEL.current.value;
-    fetch(`http://157.230.63.172:3000/games/`, {
+    fetch(`http://localhost:3000/games/`, {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -48,43 +48,65 @@ export default class Home extends Component {
   render() {
     return (
       //class for styling = className="text"
-      <div>
-        <h1>Bare Bones Gaming</h1>
-        <hr />
-        <div className="input-group">
-            <div className ="form-outline">
-                    <form onSubmit={this.updateList}>
-                        <input type="search" className="form-control" ref={this.searchEL}></input>
-                        <label className= "form-label">Search for a game</label>
-                    </form>
-            </div>
+      <div className="container-mine">
+        <div className="logo-containter">
+          {/* <center> */}
+          <img src={Logo} className="title-name" />
+          {/* </center> */}
         </div>
-            <hr/>
+        <div className="container container-2">
+          <div className="row">
+            <div className="col-lg-6 mx-auto">
+              <form onSubmit={this.updateList}>
+                <div className="input-group">
+                  <input
+                    type="search"
+                    className="form-control search-bar"
+                    ref={this.searchEL}
+                  />
+                  <span className="input-group-btn">
+                    <button
+                      className="btn btn-primary search-button"
+                      type="submit"
+                      value="submit"
+                    >
+                      Search
+                    </button>
+                  </span>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          {this.state.isLoading ? (
             <div>
-                    {this.state.isLoading ? (
-                        <div>
-                        <h2>
-                            {this.searchEL.current.value == ""
-                            ? "Fetching Random Game"
-                            : `Loading search results for ${this.searchEL.current.value}`}
-                        </h2>
-                        <Loader />
-                        </div>
-                    ) : (
-                        <ul className="list-group text-center">
-                        {this.state.gameList.map((game) => (
-                            <li className="list-group-item">
-                            <Link onClick={() => this.props.setCache(game.Name)}
-                                to={`/title/${encodeURI(game.Name)}`}
-                            >
-                                {game.Name}
-                            </Link>
-                            </li>
-                        ))}
-                        </ul>
-                    )}
+              <h2 style={{ textAlign: "center", color: "#f2a365" }}>
+                {this.searchEL.current.value == ""
+                  ? "Fetching Random Game"
+                  : `Loading search results for ${this.searchEL.current.value}`}
+
+                <Loader />
+              </h2>
             </div>
+          ) : (
+            <div className="container">
+              <ul className="list-group text-center review-list-hp">
+                {this.state.gameList.map((game) => (
+                  <Link
+                    className="review-list-item"
+                    onClick={() => this.props.setCache(game.Name)}
+                    to={`/title/${encodeURI(game.Name)}`}
+                  >
+                    <li className="list-review">{game.Name}</li>
+                  </Link>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
+      </div>
     );
   }
 }

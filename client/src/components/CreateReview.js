@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import StarList from './StarList'
+import "../style.css"
 export default class CreateReview extends Component {
     constructor(props) {
         super(props)
@@ -20,7 +21,7 @@ export default class CreateReview extends Component {
         const stars = this.state.starCount
         const gameName = this.props.gameName
 
-        fetch("http://157.230.63.172:3000/reviews/create/", {
+        fetch("http://localhost:3000/reviews/create/", {
           headers: {
             'Accept': "application/json",
             "Content-Type": "application/json",
@@ -48,20 +49,22 @@ export default class CreateReview extends Component {
 
     render(){
         return(
-            <div style={{margin: '35px'}}>
+            <div className="create-review">
                 <form id="myform" action="" >
-                    <div className="form-group">
-                        <label htmlFor="HoursPlayed">Hours Played</label>
-                        <input ref={this.hoursEl} required className="form-control" type="number" id="HoursPlayed" name="HoursPlayed" min="1" max="1000"></input>
+                    <div className="form-row">
+                        <div className="form-group col">
+                            <label className="padd-1" htmlFor="HoursPlayed">Hours Played</label>
+                            <input ref={this.hoursEl} required className="form-control" type="number" id="HoursPlayed" name="HoursPlayed" min="1" max="1000"></input>
+                        </div>
+                        <div className="form-group col">
+                            <label className="padd-1">Rating</label>
+                            <StarList updateFormStars={this.updateStarCount.bind(this)}/>
+                        </div>
                     </div>
+                    
                     <div className="form-group">
-                        {/* <label for="FiveStarRating">Five Star Rating</label>
-                        <input required className="form-control" type="number" id="FiveStarRating" name="FiveStarRating" min="0" max="5"></input> */}
-                        <StarList updateFormStars={this.updateStarCount.bind(this)}/>
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="Review">Bare Bones Review</label>
-                        <input required ref={this.reviewEl} className="form-control" type="text" id="Review" name="Review" placeholder="Type your review here" maxLength="120"></input>
+                        <label className="padd-1" htmlFor="Review">Bare Bones Review</label>
+                        <input required ref={this.reviewEl} className="form-control review-text-box" type="text" id="Review" name="Review" placeholder="Type your review here" maxLength="120"></input>
                     </div>
                     <button className="btn btn-primary" onClick={this.clickHandler.bind(this)}>Submit</button>
                 </form>
