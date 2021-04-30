@@ -13,7 +13,7 @@ export default function Game(props) {
   const [stars, setStars] = useState([])
   const [rating, setRating] = useState(0)
   useEffect(() => {
-    fetch(`http://localhost:3000/reviews/${gameName.split(" ").join("")}`)
+    fetch(`http://157.230.63.172:3000/reviews/${gameName.split(" ").join("")}`)
       .then((res) => res.json())
       .then((list) => {
         let reviews = [];
