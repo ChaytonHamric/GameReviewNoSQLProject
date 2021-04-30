@@ -51,17 +51,20 @@ export default class CreateReview extends Component {
         return(
             <div className="create-review">
                 <form id="myform" action="" >
-                    <div className="form-group">
-                        <label htmlFor="HoursPlayed">Hours Played</label>
-                        <input ref={this.hoursEl} required className="form-control" type="number" id="HoursPlayed" name="HoursPlayed" min="1" max="1000"></input>
+                    <div className="form-row">
+                        <div className="form-group col">
+                            <label className="padd-1" htmlFor="HoursPlayed">Hours Played</label>
+                            <input ref={this.hoursEl} required className="form-control" type="number" id="HoursPlayed" name="HoursPlayed" min="1" max="1000"></input>
+                        </div>
+                        <div className="form-group col">
+                            <label className="padd-1">Rating</label>
+                            <StarList updateFormStars={this.updateStarCount.bind(this)}/>
+                        </div>
                     </div>
+                    
                     <div className="form-group">
-                        Rating
-                        <StarList updateFormStars={this.updateStarCount.bind(this)}/>
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="Review">Bare Bones Review</label>
-                        <input required ref={this.reviewEl} className="form-control" type="text" id="Review" name="Review" placeholder="Type your review here" maxLength="120"></input>
+                        <label className="padd-1" htmlFor="Review">Bare Bones Review</label>
+                        <input required ref={this.reviewEl} className="form-control review-text-box" type="text" id="Review" name="Review" placeholder="Type your review here" maxLength="120"></input>
                     </div>
                     <button className="btn btn-primary" onClick={this.clickHandler.bind(this)}>Submit</button>
                 </form>
