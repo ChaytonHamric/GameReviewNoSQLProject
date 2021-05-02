@@ -15,7 +15,7 @@ Secondly you need to install `npm` or the *Node Package Manager*. If you are usi
 ```bash
 npm -v
 ```
-which should output the version number of npm you have installed. If you are on Mac or Linux please follow the directions found [here](https://www.npmjs.com/get-npm).
+This should output the version number of npm you have installed. If you are on Mac or Linux please follow the directions found [here](https://www.npmjs.com/get-npm).
 
 ---
 
@@ -60,7 +60,7 @@ With This
 
 ## Execution
 
-After running `npm i` and changing the IP address to `localhost` you should now be able to run project. It is quite simple to run, type the following command:
+After running `npm i` and changing the IP address to `localhost` you should now be able to run project. It is quite simple, to run type the following command:
 
 ```
 npm start
